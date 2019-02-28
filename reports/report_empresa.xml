@@ -27,28 +27,28 @@
                 </tr>
               </tbody>
             </table>
-            <!-- <h2 t-field='alumno.nombre' /> -->
-      			<table class="table table-bordered">
-      				<thead class="table-info">
-      					<tr>
+            <!-- Segunda tabla con los datos de los alumnos -->
+            <table class="table table-bordered">
+              <thead class="table-info">
+                <tr>
                   <th class='text-center' colspan='3'>Alumnos</th>
                 </tr>
                 <tr>
-      						<th>Nombre</th>
-      						<th>Apellidos</th>
-      						<th>Fecha de nacimiento</th>
-      					</tr>
-      				</thead>
-      				<tbody>
+                  <th>Nombre</th>
+                  <th>Apellidos</th>
+                  <th>Fecha de nacimiento</th>
+                </tr>
+              </thead>
+              <tbody>
                 <t t-foreach='empresa.alumnos' t-as='alumno'>
-          				<tr>
+                  <tr>
                     <td><span t-field='alumno.nombre'/></td>
                     <td><span t-field='alumno.apellidos'/></td>
                     <td><span t-field='alumno.fechaNacimiento'/></td>
-          				</tr>
+                  </tr>
                 </t>
-      				</tbody>
-      			</table>
+              </tbody>
+            </table>
           </div>
         </t>
       </t>
