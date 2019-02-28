@@ -1,0 +1,140 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+    <!-- alumno -->
+    <record model="ir.ui.view" id="alumnosfp.alumno_tree">
+      <field name="name">alumnosfp.alumno.tree</field>
+      <field name="model">alumnosfp.alumno</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="nombre"/>
+          <field name="apellidos"/>
+          <field name="fechaNacimiento"/>
+          <field name="cicloFormativo"/>
+          <field name="nota"/>
+          <field name="empresa"/>
+          <field name="notaMedia"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="alumnosfp.alumno_form">
+      <field name="name">alumnosfp.alumno.form</field>
+      <field name="model">alumnosfp.alumno</field>
+      <field name="arch" type="xml">
+        <form>
+          <group colspan="2" col="2">
+            <field name="nombre"/>
+            <field name="apellidos"/>
+            <field name="fechaNacimiento"/>
+            <field name="cicloFormativo"/>
+            <field name="nota"/>
+            <field name="empresa"/>
+          </group>
+        </form>
+      </field>
+    </record>
+
+    <!-- lista de búsqueda -->
+    <record model="ir.ui.view" id="alumnosfp.alumno_search_view">
+      <field name="name">alumnosfp.alumno.search</field>
+      <field name="model">alumnosfp.alumno</field>
+      <field name="arch" type="xml">
+        <search>
+          <field name="nombre" string="Nombre"/>
+          <field name="apellidos" string="Apellidos"/>
+          <!-- se añade un filtro a la busqueda pero solo en libros -->
+          <filter name="Nota mayor a 9" domain="[ ('nota', '&gt;=',9) ]"/>
+          <filter name="Alumnos DAM" domain="[ ('cicloFormativo', '=',0) ]"/>
+        </search>
+      </field>
+    </record>
+
+    <!-- alumno views -->
+
+    <!-- empresa views -->
+
+    <record model="ir.ui.view" id="alumnosfp.empresa_tree">
+      <field name="name">alumnosfp.empresa.tree</field>
+      <field name="model">alumnosfp.empresa</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="nombre"/>
+          <field name="direccion"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="alumnosfp.empresa_form">
+      <field name="name">alumnosfp.empresa.form</field>
+      <field name="model">alumnosfp.empresa</field>
+      <field name="arch" type="xml">
+        <form>
+          <group colspan="2" col="2">
+            <field name="nombre"/>
+            <field name="direccion"/>
+            <field name="alumnos">
+              <tree>
+                <field name="nombre"/>
+                <field name="apellidos"/>
+                <field name="fechaNacimiento"/>
+                <field name="cicloFormativo"/>
+                <field name="nota"/>
+                <field name="empresa"/>
+              </tree>
+            </field>
+          </group>
+        </form>
+      </field>
+    </record>
+
+    <!-- empresa views -->
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="alumnosfp.alumno_action_window">
+      <field name="name">Alumnos</field><!--alumnosfp.alumno.action_window-->
+      <field name="res_model">alumnosfp.alumno</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="alumnosfp.empresa_action_window">
+      <field name="name">Empresas</field><!--alumnosfp.empresa.action_window-->
+      <field name="res_model">alumnosfp.empresa</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <!-- server action to the one above -->
+    <!--
+    <record model="ir.actions.server" id="alumnosfp.action_server">
+      <field name="name">alumnosfp server</field>
+      <field name="model_id" ref="model_alumnosfp_alumnosfp"/>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": self._name,
+        }
+      </field>
+    </record>
+    -->
+
+    <!-- Top menu item -->
+
+    <menuitem name="Alumnos FP" id="alumnosfp.menu_root"/>
+
+    <!-- menu categories -->
+
+    <menuitem name="Empresas" id="alumnosfp.empresa_menu" parent="alumnosfp.menu_root" action="alumnosfp.empresa_action_window"/>
+    <menuitem name="Alumnos" id="alumnosfp.alumno_menu" parent="alumnosfp.menu_root" action="alumnosfp.alumno_action_window"/>
+
+    <!-- actions -->
+    <!--
+    <menuitem name="List" id="alumnosfp.menu_1_list" parent="alumnosfp.menu_1"
+              action="alumnosfp.action_window"/>
+    <menuitem name="Server to list" id="alumnosfp" parent="alumnosfp.menu_2"
+              action="alumnosfp.action_server"/>
+    -->
+  </data>
+</odoo>
