@@ -24,7 +24,11 @@
     # always loaded
     'data': [
         'security/security.xml',#PRIMERO EL XML
-        'security/ir.model.access.csv',#LUEGO EL access.csv, SIN ESPACIOS!!! :o
+        #LUEGO EL access.csv, SIN ESPACIOS!!! :o y el atributo id hay que resptarlo como tal XD (supongo que es la entrada del registro o algo así xd)
+        #el atributo model_id, siempre comenzara por model_NOMBRE_MODELO
+        #name, nombre a mostrar de la entrada
+        #group_id, id del grupo creado en security.xml
+        'security/ir.model.access.csv',
         'views/views.xml',
         'views/templates.xml',
         'reports/report_empresa.xml',#añadimos el nuevo fichero creado :D
