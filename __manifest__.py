@@ -24,7 +24,7 @@
     # always loaded
     'data': [
         'security/security.xml',#PRIMERO EL XML
-        'security/ir.model.access.csv',#LUEGO EL access.csv
+        'security/ir.model.access.csv',#LUEGO EL access.csv, SIN ESPACIOS!!! :o
         'views/views.xml',
         'views/templates.xml',
         'reports/report_empresa.xml',#añadimos el nuevo fichero creado :D
