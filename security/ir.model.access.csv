@@ -1,2 +1,5 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_alumnosfp_alumnosfp,alumnosfp.alumnosfp,model_alumnosfp_alumnosfp,,1,0,0,0
+coordinador, practicas coordinador, model_alumnosfp_empresa, practicas_coordinador, 1, 1, 1, 1
+coordinador, practicas coordinador, model_alumnosfp_alumno, practicas_coordinador, 1, 1, 1, 1
+profesor, practicas profesor, model_alumnosfp_empresa, practicas_profesor, 1, 0, 0, 0
+profesor, practicas profesor, model_alumnosfp_alumno, practicas_profesor, 1, 0, 0, 0

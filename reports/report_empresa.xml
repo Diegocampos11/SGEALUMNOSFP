@@ -55,11 +55,3 @@
     </t>
   </template>
 </odoo>
-      <!-- <div>
-        <strong>Nombre</strong>
-        <span t-field='empresa.nombre'/>
-      </div>
-      <div>
-        <strong>Dirección</strong>
-        <span t-field='empresa.direccion'/>
-      </div> -->
