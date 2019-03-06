@@ -32,6 +32,7 @@
         'views/views.xml',
         'views/templates.xml',
         'reports/report_empresa.xml',#añadimos el nuevo fichero creado :D
+        'data/data.xml'#añadimos datos precargados
     ],
     # only loaded in demonstration mode
     'demo': [
