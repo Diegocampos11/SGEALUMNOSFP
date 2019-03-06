@@ -122,12 +122,12 @@
 
     <!-- Top menu item -->
 
-    <menuitem name="Alumnos FP" id="alumnosfp.menu_root"/>
+    <menuitem name="Alumnos FP" id="alumnosfp.menu_root" groups="practicas_coordinador,practicas_profesor"/>
 
     <!-- menu categories -->
 
-    <menuitem name="Empresas" id="alumnosfp.empresa_menu" parent="alumnosfp.menu_root" action="alumnosfp.empresa_action_window"/>
-    <menuitem name="Alumnos" id="alumnosfp.alumno_menu" parent="alumnosfp.menu_root" action="alumnosfp.alumno_action_window"/>
+    <menuitem name="Empresas" id="alumnosfp.empresa_menu" parent="alumnosfp.menu_root" action="alumnosfp.empresa_action_window" groups="practicas_coordinador,practicas_profesor"/>
+    <menuitem name="Alumnos" id="alumnosfp.alumno_menu" parent="alumnosfp.menu_root" action="alumnosfp.alumno_action_window" groups="practicas_coordinador,practicas_profesor"/>
 
     <!-- actions -->
     <!--
